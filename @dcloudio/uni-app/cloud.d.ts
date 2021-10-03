@@ -1225,8 +1225,8 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=query](http://uniapp.dcloud.io/uniCloud/cf-database?id=query)
      */
-    get(GetParam?: GetParam): { data: unknown };
-    /**
+    get<T>(GetParam?: GetParam): { data: T, result: {data: T}, success: boolean };
+    /**unknown
      * 获取记录数据，或获取根据查询条件筛选后的记录数据
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=multi-send](http://uniapp.dcloud.io/uniCloud/clientdb?id=multi-send)
@@ -1497,7 +1497,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=query](http://uniapp.dcloud.io/uniCloud/cf-database?id=query)
      */
-    get<T>(GetParam?: GetParam): { data: T[] };
+     get<T>(GetParam?: GetParam): { data: T[], result: {data: T[]}, success: boolean };
     /**
      * 延迟查询请求
      *
@@ -1552,7 +1552,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=field](http://uniapp.dcloud.io/uniCloud/cf-database?id=field)
      */
-    field(projection: Record<string, boolean>): Query;
+    field(projection: string | Record<string, boolean>): Query;
     /**
      * 指定要使用的foreignKey
      *
@@ -2546,7 +2546,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](http://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
      */
-    uploadFile(options: UploadFileOptions): unknown;
+    uploadFile<T>(options: UploadFileOptions): Promise<T>;
     /**
      * 选择并上传文件
      */
