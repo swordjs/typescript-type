@@ -3,6 +3,8 @@ declare interface CloudContext {
   CLIENTIP: string;
   // 客户端user-agent
   CLIENTUA: string;
+  // 客户端传递的paltform请求头，mp-weixin/mp-qq/...
+  PLATFORM: string;
   // 当前环境信息 {spaceId:'xxx',provider:'tencent'}
   SPACEINFO: string;
   userID?: string;
