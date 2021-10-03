@@ -22,13 +22,13 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=collection](http://uniapp.dcloud.io/uniCloud/cf-database?id=collection)
      */
-    collection(collName: string | string): CollectionReference;
+    collection(collName: string): CollectionReference;
     /**
      * 指定数据库操作需要执行的action
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/database?id=action](http://uniapp.dcloud.io/uniCloud/database?id=action)
      */
-    action(actionName: string | string): Db;
+    action(actionName: string): Db;
     /**
      * 获取云端环境变量
      *
@@ -1129,7 +1129,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=order-by](http://uniapp.dcloud.io/uniCloud/cf-database?id=order-by)
      */
-    orderBy(fieldPath: string | string, directionStr: 'desc' | 'asc'): Query;
+    orderBy(fieldPath: string, directionStr: 'desc' | 'asc'): Query;
     /**
      * 指定查询结果集数量上限
      *
@@ -1154,7 +1154,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=field](http://uniapp.dcloud.io/uniCloud/cf-database?id=field)
      */
-    field(projection: string | string): Query;
+    field(projection: string): Query;
     /**
      * 指定要使用的foreignKey
      *
@@ -1166,19 +1166,19 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    preField(projection: string | string): Query;
+    preField(projection: string): Query;
     /**
      * 指定分组依据
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupBy(projection: string | string): Query;
+    groupBy(projection: string): Query;
     /**
      * 指定统计指标
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupField(projection: string | string): Query;
+    groupField(projection: string): Query;
     /**
      * 删除多条记录。注意只支持通过匹配 where 语句来删除，不支持 skip 和 limit
      *
@@ -1237,7 +1237,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=field](http://uniapp.dcloud.io/uniCloud/cf-database?id=field)
      */
-    field(projection: string | string): DocumentReference;
+    field(projection: string): DocumentReference;
     /**
      * 指定要使用的foreignKey
      *
@@ -1249,19 +1249,19 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    preField(projection: string | string): Query;
+    preField(projection: string): Query;
     /**
      * 指定分组依据
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupBy(projection: string | string): Query;
+    groupBy(projection: string): Query;
     /**
      * 指定统计指标
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupField(projection: string | string): Query;
+    groupField(projection: string): Query;
   }
 
   interface AggregateReference {
@@ -1515,13 +1515,13 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=where](http://uniapp.dcloud.io/uniCloud/cf-database?id=where)
      */
-    where(query: string | string): Query;
+    where(query: string): Query;
     /**
      * 指定查询排序条件
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=order-by](http://uniapp.dcloud.io/uniCloud/cf-database?id=order-by)
      */
-    orderBy(fieldPath: string | string, directionStr: 'desc' | 'asc'): Query;
+    orderBy(fieldPath: string, directionStr: 'desc' | 'asc'): Query;
     /**
      * 指定查询结果集数量上限
      *
@@ -1564,13 +1564,13 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupBy(projection: string | string): Query;
+    groupBy(projection: string): Query;
     /**
      * 指定统计指标
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby](http://uniapp.dcloud.io/uniCloud/clientdb?id=groupby)
      */
-    groupField(projection: string | string): Query;
+    groupField(projection: string): Query;
     /**
      * 删除多条记录。注意只支持通过匹配 where 语句来删除，不支持 skip 和 limit
      *
@@ -2609,11 +2609,11 @@ declare namespace UniCloud {
     /**
      * original 原图，compressed 压缩图，默认二者都有
      */
-    sizeType?: string | string[];
+    sizeType?: string[];
     /**
      * album 从相册选图，camera 使用相机，默认二者都有
      */
-    sourceType?: string | string[];
+    sourceType?: string[];
     /**
      * 摄像切换
      * - front: 前置摄像头
@@ -2815,7 +2815,7 @@ declare namespace UniCloud {
     /**
      * 云函数名
      */
-    name: string | string;
+    name: string;
     /**
      * 传递给云函数的参数
      */
