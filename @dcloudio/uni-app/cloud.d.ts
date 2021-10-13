@@ -1361,7 +1361,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-database?id=aggregate-end](http://uniapp.dcloud.io/uniCloud/cf-database?id=aggregate-end)
      */
-    end(): { data: unknown[] };
+    end(): { data: unknown[], success: boolean, result: {data: unknown[]} };
   }
 
   interface UnwindOptions {
@@ -2540,7 +2540,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction](http://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction)
      */
-    callFunction(options: CallFunctionOptions): unknown;
+    callFunction(options: CallFunctionOptions): { data: unknown[], success: boolean, result: {data: unknown[]} };
     /**
      * 上传文件到云端
      *

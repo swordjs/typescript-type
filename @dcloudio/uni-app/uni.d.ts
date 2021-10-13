@@ -9045,6 +9045,10 @@ declare namespace UniApp {
      * 用户头像
      */
     avatarUrl: string;
+    /**
+     * 性别
+     */
+    gender: number;
   }
 
   interface PreLoginOptions {
