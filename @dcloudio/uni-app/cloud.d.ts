@@ -2540,7 +2540,7 @@ declare namespace UniCloud {
      *
      * 文档: [http://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction](http://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction)
      */
-    callFunction(options: CallFunctionOptions): { data: unknown[], success: boolean, result: {data: unknown[]} };
+    callFunction<T = {data: unknown[]}>(options: CallFunctionOptions): { data: unknown[], success: boolean, result: T };
     /**
      * 上传文件到云端
      *
