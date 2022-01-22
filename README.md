@@ -1,7 +1,7 @@
 剑指题解开源产品和其他附属库公用的类型库，重构/修改了sword&uniapp&explain&unicloud等ts声明
 
 ```
-npm i sword-typescript-type-core --save-dev
+npm i @sword-code-practice/type
 ```
 
 [剑指题解开源仓库](https://github.com/swordCodePractice)
