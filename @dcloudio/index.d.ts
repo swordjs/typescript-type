@@ -1,2 +1,2 @@
-import "./uni-app/index.d.ts"
-import "./html5plus/plus.d.ts"
+/// <reference path="./uni-app/index.d.ts" />
+/// <reference path="./html5plus/plus.d.ts" />
