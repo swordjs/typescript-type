@@ -1,3 +1,5 @@
+
+import { ExplainCloudEvent, CloudContext } from "../sword-uni-cloud/index"
 declare module 'explain' {
   export class service {
     public event: ExplainCloudEvent;
