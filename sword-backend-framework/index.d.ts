@@ -1,7 +1,7 @@
-import { QueryObject } from "ufo";
-
 export interface HttpContext {
-  query: QueryObject;
+  query: {
+    [x: string]: string | string[];
+  };
   params: Record<string, unknown>;
 }
 
@@ -22,7 +22,7 @@ export type HttpInstructReturn = {
 
 export type HttpApi = (
   instruct: HttpInstructReturn | HttpInstructReturn[],
-  handler: () => void
+  handler: (ctx: HttpContext) => void
 ) => {
   instruct: {
     method: HttpInstructMethod | HttpInstructMethod[];

@@ -10,8 +10,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "devDependencies": {
-    "ufo": "^0.7.11"
   }
 }
