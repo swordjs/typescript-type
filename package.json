@@ -1,10 +1,17 @@
 {
   "name": "@sword-code-practice/types",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "types": "index.d.ts",
   "main": "index.d.ts",
+  "scripts": {
+    "dev:nodemon": "nodemon --watch ./ -C -e ts --debug -x 'npm run async'",
+    "async": "yalc push"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "ufo": "^0.7.11"
   }
 }

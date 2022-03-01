@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  ufo: ^0.7.11
+
+devDependencies:
+  ufo: 0.7.11
+
+packages:
+
+  /ufo/0.7.11:
+    resolution: {integrity: sha512-IT3q0lPvtkqQ8toHQN/BkOi4VIqoqheqM1FnkNWT9y0G8B3xJhwnoKBu5OHx8zHDOvveQzfKuFowJ0VSARiIDg==}
+    dev: true
