@@ -1,23 +1,24 @@
 export interface ContextData {
-  query?: Record<string, string>;
+  query?: Record<string, string | string[] | undefined>;
   params?: Record<string, unknown>;
 }
 export interface HttpContext<T extends ContextData = ContextData> {
   key: string; // context的key由api构造
+  method: HttpInstructMethod[],
   proto: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
 }
 
 export type HttpInstructMethod =
-  | "all"
-  | "get"
-  | "post"
-  | "patch"
-  | "put"
-  | "delete"
-  | "head"
-  | "options";
+  | "GET"
+  | "HEAD"
+  | "POST"
+  | "PUT"
+  | "DELETE"
+  | "CONNECT"
+  | "OPTIONS"
+  | "TRACE";
 
 export type HttpInstruct = (path?: string) => HttpInstructReturn;
 export type HttpInstructReturn = {
@@ -32,10 +33,9 @@ export type HttpApi = <C extends ContextData>(
 
 export type HttpApiReturn<C extends ContextData> = {
   instruct: {
-    method: HttpInstructMethod | HttpInstructMethod[];
+    method: HttpInstructMethod[];
     path?: string;
   };
-  validateProto: Use["ValidateProto"];
   handler: (ctx: HttpContext<C>) => void;
 };
 
