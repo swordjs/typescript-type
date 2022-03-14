@@ -8,6 +8,9 @@ export interface HttpContext<T extends ContextData = ContextData> {
   proto: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
+  return?: {
+    data: unknown; // 返回对象
+  }
 }
 
 export type HttpInstructMethod =
