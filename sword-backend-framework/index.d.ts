@@ -32,7 +32,7 @@ export type HttpInstructReturn = {
 
 export type HttpApi = <C extends ContextData>(
   instruct: HttpInstructReturn | HttpInstructReturn[],
-  handler: (ctx: HttpContext<C>) => void
+  handler: (ctx: HttpContext<C>) => C['res']
 ) => HttpApiReturn<C>;
 
 export type HttpApiReturn<C extends ContextData> = {
