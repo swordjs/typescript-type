@@ -1,15 +1,16 @@
 export interface ContextData {
-  query?: Record<string, string | string[] | undefined>;
-  params?: Record<string, unknown>;
+  query?: unknown;
+  params?: unknown;
+  res?: unknown
 }
 export interface HttpContext<T extends ContextData = ContextData> {
-  key: string; // context的key由api构造
-  method: HttpInstructMethod[],
-  proto: Record<string, unknown>;
+  readonly key: string; // context的key由api构造
+  readonly method: HttpInstructMethod[],
+  readonly proto: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
   return?: {
-    data: unknown; // 返回对象
+    data: T['res']; // 返回对象
   }
 }
 
@@ -39,7 +40,7 @@ export type HttpApiReturn<C extends ContextData> = {
     method: HttpInstructMethod[];
     path?: string;
   };
-  handler: (ctx: HttpContext<C>) => void;
+  handler: (ctx: HttpContext<C>) => C['res'];
 };
 
 export interface Use {
