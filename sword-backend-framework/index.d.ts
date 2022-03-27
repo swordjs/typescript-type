@@ -1,17 +1,17 @@
 export interface ContextData {
   query?: unknown;
   params?: unknown;
-  res?: unknown
+  res?: unknown;
 }
 export interface HttpContext<T extends ContextData = ContextData> {
   readonly key: string; // context的key由api构造
-  readonly method: HttpInstructMethod[],
+  readonly method: HttpInstructMethod[];
   readonly proto: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
   return?: {
-    data: T['res']; // 返回对象
-  }
+    data: T["res"]; // 返回对象
+  };
 }
 
 export type HttpInstructMethod =
@@ -30,19 +30,18 @@ export type HttpInstructReturn = {
   path?: string;
 };
 
-export type HttpApi = <C extends ContextData>(
-  instruct: HttpInstructReturn | HttpInstructReturn[],
-  handler: (ctx: HttpContext<C>) => C['res']
-) => HttpApiReturn<C>;
+export type HttpApiHandler<C extends ContextData> = (
+  ctx: HttpContext<C>
+) => C["res"];
+
 
 export type HttpApiReturn<C extends ContextData> = {
   instruct: {
     method: HttpInstructMethod[];
     path?: string;
   };
-  handler: (ctx: HttpContext<C>) => C['res'];
+  handler: (ctx: HttpContext<C>) => C["res"];
 };
-
 export interface Use {
   ValidateProto: (
     key: string,
