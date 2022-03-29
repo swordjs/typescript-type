@@ -62,7 +62,7 @@ export type Plugin = {
   name: string;
   // 提供几个钩子用来定义函数，作为框架runtime的shim
   server?: Partial<{
-    start: (...args: unknown[]) => void
+    start: (...args: unknown[]) => Promise<void> | void
   }>,
   log?: Partial<{
     err: (v: string | Error) => void;
