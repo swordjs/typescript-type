@@ -57,3 +57,16 @@ export interface Use {
         errMsg: string;
       };
 }
+
+export type Plugin = {
+  name: string;
+  // 提供几个钩子用来定义函数，作为框架runtime的shim
+  server?: Partial<{
+    start: (...args: unknown[]) => void
+  }>,
+  log?: Partial<{
+    err: (v: string | Error) => void;
+    info: (v: string) => void;
+    success: (v: string) => void;
+  }>
+}
