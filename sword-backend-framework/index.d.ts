@@ -7,6 +7,7 @@ export interface HttpContext<T extends ContextData = ContextData> {
   readonly key: string; // context的key由api构造
   readonly method: HttpInstructMethod[];
   readonly proto: Record<string, unknown>;
+  readonly headers: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
   return?: {
@@ -61,12 +62,12 @@ export interface Use {
 export type Plugin = {
   name: string;
   // 提供几个钩子用来定义函数，作为框架runtime的shim
-  server?: Partial<{
+  server?: {
     start: (...args: any[]) => Promise<void> | void
-  }>,
-  log?: Partial<{
+  },
+  log?: {
     err: (v: string | Error) => void;
     info: (v: string) => void;
     success: (v: string) => void;
-  }>
+  }
 }
