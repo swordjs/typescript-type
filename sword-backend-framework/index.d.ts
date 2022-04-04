@@ -7,7 +7,8 @@ export interface HttpContext<T extends ContextData = ContextData> {
   readonly key: string; // context的key由api构造
   readonly method: HttpInstructMethod[];
   readonly proto: Record<string, unknown>;
-  readonly headers: Record<string, unknown>;
+  readonly reqHeaders: Record<string, unknown>;
+  resHeaders: Record<string, unknown>;
   query: T["query"];
   params: T["params"];
   return?: {
